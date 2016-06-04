@@ -1,0 +1,30 @@
+TELEMETRY MOTOR TIME BIG_ENDIAN "gps time and system time"
+    APPEND_ITEM LEN 32 UINT "length of packet in bytes"
+    APPEND_ID_ITEM PKTID 16 UINT 3 "packet id which must be 3"
+
+    APPEND_ITEM GPSTIME 32 FLOAT "GPS time formatted as hhmmss.sss"
+	APPEND_ITEM IMUTIME1 32 UINT "IMU1 timestamp (means nothing to MOTOR)"
+	APPEND_ITEM IMUTIME2 32 UINT "IMU2 timestamp (means nothing to MOTOR)"
+
+    APPEND_ITEM SYSTIME_S 32 UINT "System time in seconds since epoch"
+        UNITS Seconds s
+    APPEND_ITEM SYSTIME_U 32 UINT "System time microseconds (decimal part)"
+        UNITS Micro-seconds μs
+
+TELEMETRY MOTOR ENCODER BIG_ENDIAN "data from encoder with system timestamp"
+    APPEND_ITEM LEN 32 UINT "length of packet in bytes"
+    APPEND_ID_ITEM PKTID 16 UINT 5 "packet id which must be 5"
+
+    APPEND_ITEM SYSTIME_S 32 UINT "System time in seconds since epoch"
+        UNITS Seconds s
+    APPEND_ITEM SYSTIME_U 32 UINT "System time microseconds (decimal part)"
+        UNITS Micro-seconds μs
+
+    APPEND_ITEM RAW_CNT 32 INT "Raw quadrature counts from encoder"
+    APPEND_ITEM SPEED 32 FLOAT "Motor speed in degrees per second"
+        UNITS degrees/second °/s
+		READ_CONVERSION round_to.rb 4
+    APPEND_ITEM POSITION 32 FLOAT "Position in degrees from home"
+        UNITS degrees °
+		READ_CONVERSION round_to.rb 2
+    APPEND_ITEM REV_CNT 32 UINT "Revolution count"
