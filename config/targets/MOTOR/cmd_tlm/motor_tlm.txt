@@ -27,4 +27,4 @@ TELEMETRY MOTOR ENCODER BIG_ENDIAN "data from encoder with system timestamp"
     APPEND_ITEM POSITION 32 FLOAT "Position in degrees from home"
         UNITS degrees °
 		READ_CONVERSION round_to.rb 2
-    APPEND_ITEM REV_CNT 32 UINT "Revolution count"
+    APPEND_ITEM REV_CNT 32  INT "Revolution count"
