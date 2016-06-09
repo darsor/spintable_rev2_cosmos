@@ -1,4 +1,3 @@
-USER_MODIFIED
 "lib/example_background_task.rb" 0x01426696
 "lib/example_target.rb" 0xFBEF2AE3
 "lib/scpi_target.rb" 0x227D06B7
@@ -19,15 +18,25 @@ USER_MODIFIED
 "config/data/tada.wav" 0x1ABCFFD1
 "config/data/vswitchoff.gif" 0xFAE436C9
 "config/data/vswitchon.gif" 0xD747AC45
-"config/system/system.txt" 0x9B0EE3FB
+"config/system/system.txt" 0x23E5CD5F
+"config/targets/ADCS/cmd_tlm/tlm.txt" 0x5FA2FDF4
+"config/targets/ADCS/cmd_tlm_server.txt" 0xD6BF9404
 "config/targets/COSMOS/cmd_tlm/cosmos_server_cmds.txt" 0xE2F62B11
 "config/targets/COSMOS/cmd_tlm/cosmos_server_tlm.txt" 0xC667CCD6
 "config/targets/COSMOS/cmd_tlm_server.txt" 0xE53A4164
 "config/targets/COSMOS/screens/limits_change.txt" 0xE8C47C54
 "config/targets/COSMOS/screens/version.txt" 0x393D4F72
 "config/targets/COSMOS/target.txt" 0xB39D9281
-"config/targets/SENSORS/cmd_tlm/tlm.txt" 0x7E1D82FE
-"config/targets/SENSORS/cmd_tlm_server.txt" 0x2B7EBC94
+"config/targets/MOTOR/cmd_tlm/motor_cmd.txt" 0xC5B5DDC9
+"config/targets/MOTOR/cmd_tlm/motor_tlm.txt" 0x52DFFB68
+"config/targets/MOTOR/cmd_tlm_server.txt" 0xEB6EAF91
+"config/targets/MOTOR/lib/round_to.rb" 0x77602903
+"config/targets/MOTOR/screens/position viewer.txt" 0x0EAEBF56
+"config/targets/MOTOR/target.txt" 0x2211F1F2
+"config/targets/SENSORS/cmd_tlm/tlm.txt" 0x1966D040
+"config/targets/SENSORS/cmd_tlm_server.txt" 0xB82DC01D
+"config/targets/SENSORS/screens/test.txt" 0x2356866C
+"config/targets/SYSTEM/screens/overview.txt" 0x0923566B
 "config/tools/cmd_tlm_server/cmd_tlm_server.txt" 0x8031F0EB
 "config/tools/data_viewer/data_viewer.txt" 0xCAC3B017
 "config/tools/handbook_creator/default_toc.xsl" 0x4122A040
@@ -57,13 +66,8 @@ USER_MODIFIED
 "config/tools/table_manager/PPSSelectionTable_def.txt" 0xE7A1E70B
 "config/tools/table_manager/TLMMonitoringTable_def.txt" 0xBD70F0A7
 "config/tools/test_runner/test_runner.txt" 0x1EB7E49C
-"config/tools/tlm_extractor/tlm_extractor.txt" 0x0B97FA7D
-"config/tools/tlm_extractor/tlm_extractor2.txt" 0x5C780BD2
-"config/tools/tlm_extractor/tlm_extractor3.txt" 0x475006AA
-"config/tools/tlm_extractor/tlm_extractor4.txt" 0x068824C2
-"config/tools/tlm_extractor/_adcs_time.txt" 0x3DAD5094
 "config/tools/tlm_grapher/README.txt" 0x93B2C07E
-"config/tools/tlm_viewer/tlm_viewer.txt" 0x825AF31C
+"config/tools/tlm_viewer/tlm_viewer.txt" 0xCFA1682F
 "tools/CmdExtractor" 0x96E82AC3
 "tools/CmdExtractor.bat" 0x09A34857
 "tools/CmdSender" 0x10346CF4
