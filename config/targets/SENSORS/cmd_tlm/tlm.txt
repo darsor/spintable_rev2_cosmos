@@ -1,13 +1,15 @@
 TELEMETRY SENSOR TIME BIG_ENDIAN "gps time and system time"
-    APPEND_ITEM LEN         32 UINT "length of packet in bytes"
-    APPEND_ID_ITEM PKTID    16 UINT 3 "packet id which must be 3"
-    APPEND_ITEM GPSTIME     32 FLOAT "GPS time formatted as hhmmss.sss"
-	APPEND_ITEM IMUTIME1	32 UINT	"Timestamp from IMU1 (FRT with 25μs resolution)"
-	APPEND_ITEM IMUTIME2	32 UINT	"Timestamp from IMU2 (FRT with 25μs resolution)"
-    APPEND_ITEM SYSTIME_S   32 UINT "System time in seconds since epoch"
+    APPEND_ITEM 	LENGTH      32 		UINT   	"length of packet in bytes"
+    APPEND_ID_ITEM 	PKT_ID   	16 		UINT 3 	"packet id which must be 3"
+    APPEND_ITEM 	GPSTIME     32 		FLOAT  	"GPS time formatted as hhmmss.sss"
+	APPEND_ITEM 	IMUTIME1	32 		UINT	"Timestamp from IMU1 (FRT with 25μs resolution)"
+	APPEND_ITEM 	IMUTIME2	32 		UINT	"Timestamp from IMU2 (FRT with 25μs resolution)"
+    APPEND_ITEM 	SYSTIME_S   32 		UINT   	"System time in seconds since epoch"
         UNITS Seconds s
-    APPEND_ITEM SYSTIME_U   32 UINT "System time microseconds (decimal part)"
+    APPEND_ITEM 	SYSTIME_U   32 		UINT 	"System time microseconds (decimal part)"
         UNITS Microseconds μs
+	ITEM			SYSTIME		0	0	DERIVED	"system time (unix seconds since epoch)"
+		READ_CONVERSION systime.rb
 
 TELEMETRY SENSORS IMU1 BIG_ENDIAN "Telemetry from IMU 1 (+Magnetometer)"
 	APPEND_ITEM		LENGTH		32		UINT	"packet length"
@@ -22,6 +24,8 @@ TELEMETRY SENSORS IMU1 BIG_ENDIAN "Telemetry from IMU 1 (+Magnetometer)"
 	APPEND_ITEM		MAG_Y		16		INT		"mag axis y"
 	APPEND_ITEM		MAG_Z		16		INT		"mag axis z"
 	APPEND_ITEM		TIMESTAMP	32		UINT	"imu 1 timestamp"
+	ITEM			SYSTIME		0	0	DERIVED	"derived system timestamp"
+		READ_CONVERSION imu_systime.rb 1
 	
 TELEMETRY SENSORS IMU2 BIG_ENDIAN "Telemetry from IMU 2 (+Magnetometer)"
 	APPEND_ITEM		LENGTH		32		UINT	"packet length"
@@ -36,6 +40,8 @@ TELEMETRY SENSORS IMU2 BIG_ENDIAN "Telemetry from IMU 2 (+Magnetometer)"
 	APPEND_ITEM		MAG_Y		16		INT		"mag axis y"
 	APPEND_ITEM		MAG_Z		16		INT		"mag axis z"
 	APPEND_ITEM		TIMESTAMP	32		UINT	"imu 1 timestamp"
+	ITEM			SYSTIME		0	0	DERIVED	"derived system timestamp"
+		READ_CONVERSION imu_systime.rb 2
 	
 TELEMETRY SENSORS CAMERA BIG_ENDIAN "Camera image"
 	APPEND_ITEM		LENGTH		32		UINT	"packet length"
@@ -43,3 +49,5 @@ TELEMETRY SENSORS CAMERA BIG_ENDIAN "Camera image"
 	APPEND_ITEM		IMAGE		614400	BLOCK	"greyscale image 320x240"
 	APPEND_ITEM		SYSTIME_S	32		UINT	"system time in seconds since epoch"
 	APPEND_ITEM		SYSTIME_U	32		UINT	"system time microsecond part"
+	ITEM			SYSTIME		0	0	DERIVED	"system time (unix seconds since epoch)"
+		READ_CONVERSION systime.rb
