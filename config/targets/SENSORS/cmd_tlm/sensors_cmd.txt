@@ -25,3 +25,10 @@ COMMAND SENSORS ACCEL_RES BIG_ENDIAN "Change accelerometer full-scale resolution
 		STATE "+/- 4 g" 1
 		STATE "+/- 8 g" 2
 		STATE "+/- 16 g" 3
+		
+COMMAND SENSORS RESET_IMU BIG_ENDIAN "Reboot an IMU"
+    PARAMETER       LENGTH      0   32 UINT  8  8  8 "Length of packet in bytes, must be 8"
+    ID_PARAMETER    CMD_ID      32  16 UINT 14 14 14 "ID of command, must be 14"
+	PARAMETER		IMU			48	16 UINT	 1  2  1 "Imu 1 or 2"
+		STATE "IMU 1" 1
+		STATE "IMU 2" 2

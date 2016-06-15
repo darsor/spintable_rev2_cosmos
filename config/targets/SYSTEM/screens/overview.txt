@@ -36,6 +36,8 @@ HORIZONTAL
 						NAMED_WIDGET IMU1_ACCEL_RES COMBOBOX "+/- 2 g" "+/- 4 g" "+/- 8 g" "+/- 16 g"
 						BUTTON 'Set' 'cmd("SENSORS ACCEL_RES with IMU 1, RESOLUTION \'#{get_named_widget("IMU1_ACCEL_RES").text}\'")'
 					END
+					
+					BUTTON 'Reset IMU 1' 'cmd("SENSORS RESET_IMU with IMU 1")'
 				END
 				
 				VERTICALBOX
@@ -153,6 +155,8 @@ HORIZONTAL
 						NAMED_WIDGET IMU2_ACCEL_RES COMBOBOX "+/- 2 g" "+/- 4 g" "+/- 8 g" "+/- 16 g"
 						BUTTON 'Set' 'cmd("SENSORS ACCEL_RES with IMU 2, RESOLUTION \'#{get_named_widget("IMU2_ACCEL_RES").text}\'")'
 					END
+					
+					BUTTON 'Reset IMU 2' 'cmd("SENSORS RESET_IMU with IMU 2")'
 				END
 				
 				VERTICALBOX
