@@ -1,8 +1,8 @@
-lib
-outputs
-procedures
-tools
-Gem*
-Launch*
-Rakefile
-userpath.txt
+/lib
+/outputs
+/procedures
+/tools
+/Gem*
+/Launch*
+/Rakefile
+/userpath.txt

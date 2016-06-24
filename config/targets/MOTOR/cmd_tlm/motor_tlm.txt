@@ -22,10 +22,10 @@ TELEMETRY MOTOR ENCODER BIG_ENDIAN "data from encoder with system timestamp"
 
     APPEND_ITEM 	RAW_CNT 	32 INT 		"Raw quadrature counts from encoder"
     APPEND_ITEM 	SPEED 		32 FLOAT 	"Motor speed in degrees per second"
-        UNITS degrees/second °/s
+        UNITS "Degrees per Second" deg/s
 		READ_CONVERSION round_to.rb 4
     APPEND_ITEM 	POSITION 	32 FLOAT 	"Position in degrees from home"
-        UNITS degrees °
+        UNITS degrees deg
 		READ_CONVERSION round_to.rb 2
     APPEND_ITEM 	REV_CNT 	32  INT 	"Revolution count"
 	ITEM			SYSTIME	 	0 0 DERIVED "System time (unix seconds since epoch)"
