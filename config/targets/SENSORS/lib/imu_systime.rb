@@ -1,5 +1,4 @@
 require 'cosmos/conversions/conversion'
-require 'cosmos/packets/telemetry.rb' # for the TIME packet timestamps
 require 'cosmos/system/system.rb'
 module Cosmos
   class ImuSystime < Conversion
