@@ -2,10 +2,12 @@ TELEMETRY MOTOR TIME BIG_ENDIAN "gps time and system time"
     APPEND_ITEM 	LEN 		32 	UINT 	"length of packet in bytes"
     APPEND_ID_ITEM 	PKTID 		16 	UINT 3 	"packet id which must be 3"
     APPEND_ITEM 	GPSTIME 	32 	FLOAT 	"GPS time formatted as hhmmss.sss"
+		FORMAT_STRING "%6.3f"
     APPEND_ITEM 	SYSTIME_S 	32 	UINT 	"System time in seconds since epoch"
     APPEND_ITEM 	SYSTIME_U 	32	UINT 	"System time microseconds (decimal part)"
 	ITEM			SYSTIME	 	0 0 DERIVED "System time (unix seconds since epoch)"
 		READ_CONVERSION systime.rb
+		FORMAT_STRING "%.6f"
 
 TELEMETRY MOTOR ENCODER BIG_ENDIAN "data from encoder with system timestamp"
     APPEND_ITEM 	LEN 		32 UINT 	"length of packet in bytes"
@@ -27,4 +29,4 @@ TELEMETRY MOTOR ENCODER BIG_ENDIAN "data from encoder with system timestamp"
 		READ_CONVERSION motor_rev_cnt.rb
 	ITEM			SYSTIME	 	0 0 DERIVED "System time (unix seconds since epoch)"
 		READ_CONVERSION systime.rb
-		UNITS Seconds s
+		FORMAT_STRING "%.6f"

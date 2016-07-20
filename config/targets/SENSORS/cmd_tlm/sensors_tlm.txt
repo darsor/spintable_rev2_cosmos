@@ -1,7 +1,8 @@
 TELEMETRY SENSOR TIME BIG_ENDIAN "gps time and system time"
     APPEND_ITEM 	LENGTH      32 		UINT   	"length of packet in bytes"
-    APPEND_ID_ITEM 	PKT_ID   	16 		UINT 3 	"packet id which must be 3"
+    APPEND_ID_ITEM 	PKT_ID   	16 		UINT 15	"packet id which must be 15"
     APPEND_ITEM 	GPSTIME     32 		FLOAT  	"GPS time formatted as hhmmss.sss"
+		FORMAT_STRING "%6.3f"
 	APPEND_ITEM 	IMUTIME1	32 		UINT	"Timestamp from IMU1 (FRT with 25μs resolution)"
 	APPEND_ITEM 	IMUTIME2	32 		UINT	"Timestamp from IMU2 (FRT with 25μs resolution)"
     APPEND_ITEM 	SYSTIME_S   32 		UINT   	"System time in seconds since epoch"
@@ -10,6 +11,7 @@ TELEMETRY SENSOR TIME BIG_ENDIAN "gps time and system time"
         UNITS Microseconds μs
 	ITEM			SYSTIME		0	0	DERIVED	"system time (unix seconds since epoch)"
 		READ_CONVERSION systime.rb
+		FORMAT_STRING "%.6f"
 
 TELEMETRY SENSORS IMU1 BIG_ENDIAN "Telemetry from IMU 1 (+Magnetometer)"
 	APPEND_ITEM		LENGTH		32		UINT	"packet length"
@@ -53,6 +55,7 @@ TELEMETRY SENSORS IMU1 BIG_ENDIAN "Telemetry from IMU 1 (+Magnetometer)"
 	APPEND_ITEM		TIMESTAMP	32		UINT	"imu 1 timestamp"
 	ITEM			SYSTIME		0	0	DERIVED	"derived system timestamp"
 		READ_CONVERSION imu_systime.rb 1
+		FORMAT_STRING "%.6f"
 	
 TELEMETRY SENSORS IMU2 BIG_ENDIAN "Telemetry from IMU 2 (+Magnetometer)"
 	APPEND_ITEM		LENGTH		32		UINT	"packet length"
@@ -96,6 +99,7 @@ TELEMETRY SENSORS IMU2 BIG_ENDIAN "Telemetry from IMU 2 (+Magnetometer)"
 	APPEND_ITEM		TIMESTAMP	32		UINT	"imu 1 timestamp"
 	ITEM			SYSTIME		0	0	DERIVED	"derived system timestamp"
 		READ_CONVERSION imu_systime.rb 2
+		FORMAT_STRING "%.6f"
 	
 TELEMETRY SENSORS CAMERA BIG_ENDIAN "Camera image"
 	APPEND_ITEM		LENGTH		32		UINT	"packet length"
@@ -105,3 +109,4 @@ TELEMETRY SENSORS CAMERA BIG_ENDIAN "Camera image"
 	APPEND_ITEM		SYSTIME_U	32		UINT	"system time microsecond part"
 	ITEM			SYSTIME		0	0	DERIVED	"system time (unix seconds since epoch)"
 		READ_CONVERSION systime.rb
+		FORMAT_STRING "%.6f"
